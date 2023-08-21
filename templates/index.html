@@ -1,0 +1,52 @@
+<html>
+    <head>
+       <H1><center>Kidney Disease Prediction</center></H1> 
+       <style>
+        input[type=text] {
+            width: 50%;
+            padding: 5px 4px;
+            margin: 10px 0;
+            box-sizing: borer-box;
+            }
+
+        button {
+            width: 10%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            background-color:green;
+            color: aliceblue
+            }
+        label{
+            font-family: sans-serif;
+            text-transform: capitalize;
+        }
+       </style>
+    </head>
+    <title>
+        Prediction Page
+    </title>
+
+    <form action="{{url_for('predict')}}" method="POST" >
+        <!-- Upload File:<input type="file", name="file"><br> -->
+        <h3>Enter details to predict kidney disease</h3><br>
+        <label>blood urea</label><br><input type="text" name="bu"><br>
+        <label>glucose random</label> <br><input type="text" name="bgr"><br>
+        <label>packed cell volume</label><br><input type="text" name="pcv"><br>
+        <label>red blood cell count</label><br><input type="text" name="rbc"><br>
+        <label>serum creatinine</label><br><input type="text" name="sc"><br>
+        <label>albumin</label><br>	<input type="text" name="alb"><br>
+        <label>haemoglobin</label><br><input type="text" name="haemo"><br>
+        <label>age</label><br><input type="text" name="age"><br>
+        <label>white blood cell count</label><br><input type="text" name="wbc"><br>
+        <label>sugar</label><br><input type="text" name="sugar"><br>
+        <button type="Submit">Submit</button>
+
+    </form>
+
+    <div>
+        <h2>{{prediction_text}}</h2>
+    </div>
+
+
+</html>
