@@ -45,7 +45,7 @@ def predict():
         else:
             output = 'Patient is not having chronic kidney disease'
 
-        return render_template('index.html',prediction_text=output)
+    return render_template('index.html',prediction_text=output)
     
 
 # Main function
