@@ -30,7 +30,7 @@ def home():
 @app.route('/predict',methods=["GET","POST"])
 def predict():
     
-    if request.method=="POST":
+    if request.method=='POST':
         print(request.form.values())
         int_features = [float(x) for x in request.form.values()]
         features = np.array(int_features)
