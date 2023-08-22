@@ -31,9 +31,7 @@ def home():
 def predict():
     # global output
 
-    if request.method=="GET":
-        return render_template('submission.html')
-    else:
+    if request.method=="POST":
         print(request.form.values())
         int_features = [float(x) for x in request.form.values()]
         features = np.array(int_features)
