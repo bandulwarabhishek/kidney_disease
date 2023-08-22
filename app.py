@@ -31,19 +31,22 @@ def home():
 def predict():
     # global output
 
-    # if request.method=='POST':
-    print(request.form.values())
-    int_features = [float(x) for x in request.form.values()]
-    features = np.array(int_features)
-    x_reshaped_features=features[np.newaxis,:] #this line will add a new row vector, it converts to 2D
-    prediction = model.predict(x_reshaped_features)
-
-    if prediction == 0:
-        output = 'Patient is having chronic kidney disease'
+    if request.method=="GET":
+        return render_template('submission.html')
     else:
-       output = 'Patient is not having chronic kidney disease'
+        print(request.form.values())
+        int_features = [float(x) for x in request.form.values()]
+        features = np.array(int_features)
+        x_reshaped_features=features[np.newaxis,:] #this line will add a new row vector, it converts to 2D
+        prediction = model.predict(x_reshaped_features)
 
-    return render_template('index.html',prediction_text=output)
+        if prediction == 0:
+            output = 'Patient is having chronic kidney disease'
+        else:
+            output = 'Patient is not having chronic kidney disease'
+
+        return render_template('index.html',prediction_text=output)
+        
 
 
 
