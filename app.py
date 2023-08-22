@@ -29,6 +29,7 @@ def home():
 
 @app.route('/predict',methods=["GET","POST"])
 def predict():
+    global output
     
     if request.method=='POST':
         print(request.form.values())
@@ -38,13 +39,11 @@ def predict():
         prediction = model.predict(x_reshaped_features)
 
         if prediction == 0:
-            # output = 
-            return render_template('index.html',prediction_text='Patient is having chronic kidney disease')
+            output = 'Patient is having chronic kidney disease'
         else:
-            # output = 
-            return render_template('index.html',prediction_text='Patient is not having chronic kidney disease')
+            output = 'Patient is not having chronic kidney disease'
 
-    return 
+    return render_template('index.html',prediction_text=output)
 
 
 
