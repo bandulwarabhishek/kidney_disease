@@ -1,10 +1,10 @@
 # End-End Model Deployment For Chronic Kidney Disease Prediction
 This project is implemented to detect if a person is having a kidney disease or not.
-The aim for this project is to get familiar with machine learning pipeline
+It is created using Flask,Docker,Git Actions and Machine Learning Model
 
 There are different python scripts
 app.py #an app is created using flask 
-main.ipnyb #in this file the data has undergone data preprocessing, data engineering, data analysis and then the model is trained on Logistic Regression alogorithm
+main.ipnyb #in this file the data has undergone data preprocessing, data engineering, data analysis and then the model is trained using Logistic Regression algorithm
 requirements.txt #packages included which is required for the app and model
 Dockerfile #A docker container is created
 
