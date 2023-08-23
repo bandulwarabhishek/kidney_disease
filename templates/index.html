@@ -1,27 +1,16 @@
 <html>
     <head>
-       <H1><center>Kidney Disease Prediction</center></H1> 
-       <style>
-        input[type=text] {
-            width: 50%;
-            padding: 5px 4px;
-            margin: 10px 0;
-            box-sizing: borer-box;
-            }
+        <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
 
-        button {
-            width: 10%;
-            padding: 12px 20px;
-            margin: 8px 0;
-            box-sizing: border-box;
-            background-color:green;
-            color: aliceblue
-            }
-        label{
-            font-family: sans-serif;
-            text-transform: capitalize;
-        }
-       </style>
+<!-- Optional theme -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+
+<!-- Latest compiled and minified JavaScript -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@3.4.1/dist/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
+        
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+       <p class="navbar-text"><H1><center>Kidney Disease Prediction</center></H1></p> 
     </head>
     <title>
         Prediction Page
@@ -29,23 +18,54 @@
 
     <form action="{{url_for('predict')}}" method="POST" >
         <!-- Upload File:<input type="file", name="file"><br> -->
-        <h3>Enter details to predict kidney disease</h3><br>
-        <label>blood urea</label><br><input type="text" name="bu"><br>
-        <label>glucose random</label> <br><input type="text" name="bgr"><br>
-        <label>packed cell volume</label><br><input type="text" name="pcv"><br>
-        <label>red blood cell count</label><br><input type="text" name="rbc"><br>
-        <label>serum creatinine</label><br><input type="text" name="sc"><br>
-        <label>albumin</label><br>	<input type="text" name="alb"><br>
-        <label>haemoglobin</label><br><input type="text" name="haemo"><br>
-        <label>age</label><br><input type="text" name="age"><br>
-        <label>white blood cell count</label><br><input type="text" name="wbc"><br>
-        <label>sugar</label><br><input type="text" name="sugar"><br>
-        <button type="Submit">Submit</button>
+        <p class="navbar-text"><h3>Enter details to predict kidney disease</h3></p>
+        <div class="form-group">
+            <label for="bloodurea">Blood Urea</label>
+            <input type="text" class="form-control" name="bu" required>
+        </div>
+        <div class="form-group">
+            <label for="glucoserandom">Glucose Random</label>
+            <input type="text" class="form-control" name="bgr" required>
+        </div>
+        <div class="form-group">
+            <label for="packedcellvolume">Packed Cell Volume</label>
+            <input type="text" class="form-control" name="pcv" required>
+        </div>
+        <div class="form-group">
+            <label for="redbloodcellcount">Red Blood Cell Count</label>
+            <input type="text" class="form-control" name="rbc" required>
+        </div>
+        <div class="form-group">
+            <label for="serumcreatinine">Serum Creatinine</label>
+            <input type="text" class="form-control" name="sc" required>
+        </div>
+        <div class="form-group">
+            <label for="albumin">Albumin</label>
+            <input type="text" class="form-control" name="alb" required>
+        </div>
+        <div class="form-group">
+            <label for="haemoglobin">Haemoglobin</label>
+            <input type="text" class="form-control" name="haemo" required>
+        </div>
+        <div class="form-group">
+            <label for="age">Age</label>
+            <input type="text" class="form-control" name="age" required>
+        </div>
+        <div class="form-group">
+            <label for="whitebloodcellcount">White Blood Cell Count</label>
+            <input type="text" class="form-control" name="wbc" required>
+        </div>
+        <div class="form-group">
+            <label for="sugar">Sugar</label>
+            <input type="text" class="form-control" name="sugar" required>
+        </div>
+
+        <button type="Submit" class="btn btn-success">Submit</button>
 
     </form>
 
     <div>
-        <h2>{{prediction_text}}</h2>
+        <p class="navbar-text"><h2>Result - {{prediction_text}}</h2></p>
     </div>
 
 
